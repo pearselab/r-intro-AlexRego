@@ -74,10 +74,39 @@ jitter(my.mat) # returns 1:25, but vary from whole integer by small amount
 
 # read.csv/table, write.csv/table - reads in and writes csv/tables from/to specified path
 
+# rnorm/pnorm/dnorm/qnorm - random, probability, density, and quantile normals
 
+# runif, rpois - random uniform and poisson distribution
 
+# rank - returns ranks of values in vector
 
+# sort, order - sorts vectors into an order described by arguments. Order returns permutation.
 
+# outer - returns outer product of two arrays
+
+# rep - replicates values in x n times
+rep(x,n)
+
+# rowSum, colSum - returns sum of either rows or columns
+
+# seq - creates sequences from x to y, using z increments
+seq(0,100,1)
+
+# source - inputs file from location/url
+
+#which - returns true for logical objects
+#which.min,which.max - identifies location of min/max value in vector
+
+# setdiff,intersect,union - performs unions, intersections, differences on two vectors
+
+# table - builds table of the counts at each combination of factor levels
+
+# with - Modifying an input by some expression and outputting it
+
+## par() parameters
+# ask - asks for input before new figure is drawn
+# lty - defines different line types
+# 
 
 
 
