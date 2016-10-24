@@ -47,6 +47,19 @@ pop.size.gomp <- function(a,b,c,t){
   return(a*exp(-b*exp(-c*t)))
 }
 
+# 6
 pop.graph <- function(a,b,c,t){
-  plot(0:t, pop.size.gomp(a,b,c,0:t),type='l',xlab="Time",ylab="Ne",main="Gompertz Population Growth over Time")
+  time <- seq(0,t,.1)
+  plot(time, pop.size.gomp(a,b,c,time),type='l',xlab="Time",ylab="Ne",
+  main="Gompertz Population Growth over Time")
+}
+
+# 7 - Work In Progress
+pop.graph <- function(a,b,c,t){
+  time <- seq(0,t,.1)
+  colors <- rep("black",length(time))
+  colors[pop.size.gomp(a,b,c,time) > a] <- "blue"
+  colors[pop.size.gomp(a,b,c,time) > b] <- "red"
+  plot(time, pop.size.gomp(a,b,c,time),type='l',xlab="Time",ylab="Ne",
+  main="Gompertz Population Growth over Time", col = colors)
 }
