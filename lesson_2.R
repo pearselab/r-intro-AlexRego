@@ -41,3 +41,8 @@ for(i in 1:20){
     }
   }
 }
+
+# 5
+pop.size.gomp <- function(a,b,c,t){
+  return(a*exp(-b*exp(-c*t)))
+}
