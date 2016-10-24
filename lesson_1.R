@@ -106,7 +106,7 @@ seq(0,100,1)
 ## par() parameters
 # ask - asks for input before new figure is drawn
 # lty - defines different line types
-# 
+#
 
 
 
