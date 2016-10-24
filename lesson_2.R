@@ -30,3 +30,14 @@ is.prime <- function(x){
     }
   }
 }
+
+# 4
+for(i in 1:20){
+  if(i %% 5 == 0){
+    print(c("Good:", i))
+  } else{
+      if(is.prime(i)){
+        print(c("Job:", i))
+    }
+  }
+}
