@@ -21,3 +21,15 @@ race <- function(first, second){
     print("Both cats bathe in a beam of sunlight. The audience is disappointed.")
   }
 }
+
+# 2
+new.point <- function(x,y){
+  output <- list(x=x,y=y)
+  class(output) <- 'point'
+  return(output)
+}
+
+origin <- new.point(0,0)
+print.point <- function(x, ...){
+  cat("The coordinates for this point are","(",x$x,",", x$y,")")
+}
