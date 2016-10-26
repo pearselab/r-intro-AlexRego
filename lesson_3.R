@@ -30,6 +30,13 @@ new.point <- function(x,y){
 }
 
 origin <- new.point(0,0)
-print.point <- function(x, ...){
-  cat("The coordinates for this point are","(",x$x,",", x$y,")")
+point1 <- new.point(6,9)
+
+print.point <- function(point, ...){
+  cat("The coordinates for this point are","(",point$x,",", point$y,")")
+}
+
+# 3 - WIP
+point.diff <- function(point1, point2){
+  if(!inherits(first,'point') | !inherits(second,'point'))
 }
