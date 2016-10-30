@@ -88,3 +88,21 @@ bocks <- function(height,width){
 }
 
 # 10
+textbocks <- function(height,width,text){
+  for(i in 1:width){
+    cat('*')
+  }
+    cat('\n')
+  for(j in 1:((height/2)-1.5)){
+    cat('*',rep('',width-3), '*', '\n')
+  }
+  cat('*', text, '*','\n')
+  for(j in 1:((height/2)-1)){
+    cat('*',rep('',width-3), '*', '\n')
+  }
+  for(i in 1:width){
+    cat('*')
+  }
+}
+test.text <- "I have come here to chew bubblegum and kick ass... and I'm all out of bubblegum"
+textbocks(10,50,test.text)
