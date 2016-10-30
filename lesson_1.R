@@ -127,4 +127,4 @@ some of its noiosiest authorities insisted on its being received, for
 good or for evil, in the superlative degree of comparison only."
 
 strsplit(bonus.text, split= '\n')
-grepl('\n', bonus.text,useBytes=TRUE)
+grepl('\n', bonus.text)
