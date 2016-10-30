@@ -103,6 +103,28 @@ textbocks <- function(height,width,text){
   for(i in 1:width){
     cat('*')
   }
+  cat('\n')
 }
 test.text <- "I have come here to chew bubblegum and kick ass... and I'm all out of bubblegum"
-textbocks(10,50,test.text)
+textbocks(10,83,test.text)
+
+# 11  - I made this randomly sample input text because I thought that would be more interesting
+
+randtextbocks <- function(input,height,width,text){
+  samp <- strsplit(input,'')[[1]]
+  for(i in 1:width){
+    cat(sample(samp,1))
+  }
+    cat('\n')
+  for(j in 1:((height/2)-1.5)){
+    cat(sample(samp,1),rep('',width-3), sample(samp,1), '\n')
+  }
+  cat(sample(samp,1), text, sample(samp,1),'\n')
+  for(j in 1:((height/2)-1)){
+    cat(sample(samp,1),rep('',width-3), sample(samp,1), '\n')
+  }
+  for(i in 1:width){
+    cat(sample(samp,1))
+  }
+  cat('\n')
+}
