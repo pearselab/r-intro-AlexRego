@@ -54,7 +54,7 @@ pop.graph <- function(a,b,c,t){
   main="Gompertz Population Growth over Time")
 }
 
-# 7 - Work In Progress
+# 7
 pop.graph <- function(a,b,c,t){
   time <- seq(0,t,.1)
   colors <- rep("black",length(time))
@@ -63,3 +63,28 @@ pop.graph <- function(a,b,c,t){
   plot(time, pop.size.gomp(a,b,c,time),type='l',xlab="Time",ylab="Ne",
   main="Gompertz Population Growth over Time", col = colors)
 }
+
+# 8
+pop.graph <- function(a,b,c,t){
+  time <- seq(0,t,.1)
+  colors <- rep("black",length(time))
+  colors[pop.size.gomp(a,b,c,time) > a & pop.size.gomp(a,b,c,time) > b] <- "purple"
+  plot(time, pop.size.gomp(a,b,c,time),type='l',xlab="Time",ylab="Ne",
+  main="Gompertz Population Growth over Time", col = colors)
+}
+
+# 9
+bocks <- function(height,width){
+  for(i in 1:width){
+    cat('*')
+  }
+    cat('\n')
+  for(j in 1:(height-2)){
+    cat('*',rep('',width-3), '*', '\n')
+  }
+  for(i in 1:width){
+    cat('*')
+  }
+}
+
+# 10
