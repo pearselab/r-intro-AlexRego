@@ -106,7 +106,9 @@ seq(0,100,1)
 ## par() parameters
 # ask - asks for input before new figure is drawn
 # lty - defines different line types
-#
+# col - specifies colors used for plotting
+# mfrow/mfcolumn - figures will be plotted according to the matrix dimensions given
+# pch - changes graphic parameters for plotted points
 
 
 
@@ -123,3 +125,6 @@ were all going direct to Heaven, we were all going direct the other
 way- in short, the period was so far like the present period, that
 some of its noiosiest authorities insisted on its being received, for
 good or for evil, in the superlative degree of comparison only."
+
+strsplit(bonus.text, split= '\n')
+grepl('\n', bonus.text,useBytes=TRUE)
