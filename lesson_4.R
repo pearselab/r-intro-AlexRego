@@ -23,8 +23,15 @@ pseudosum <- function(x){
   if(is.numeric(x)){
     return(pseudosum.num(x))
     } else{
-      return(pseudosum(x))
+      return(pseudosum.cat(x))
   }
 }
 
 # 5
+dna <- 'ACGATATACGAG'
+translate <- function(x){
+  ## split sequence into codons
+  codons <- sapply(seq(from=1, to=nchar(x), by=3), function(i) substr(x,i,i+2))
+
+  
+}
