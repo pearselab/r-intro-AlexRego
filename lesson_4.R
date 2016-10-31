@@ -31,7 +31,12 @@ pseudosum <- function(x){
 dna <- 'ACGATATACGAG'
 translate <- function(x){
   ## split sequence into codons
-  codons <- sapply(seq(from=1, to=nchar(x), by=3), function(i) substr(x,i,i+2))
-
-  
+  codons <- sapply(seq(1,nchar(x),3), function(i) substr(x,i,i+2))
+  ##create fake codon lookup table
+  codontable <- matrix(c('thr','ile','tyr','glu'),ncol=4)
+  colnames(codontable) <- c('ACG','ATA','TAC','GAG')
+  ## pull from matrix based on codon
+  for(i in codons){
+    
+  }
 }
