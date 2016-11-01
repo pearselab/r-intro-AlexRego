@@ -137,3 +137,15 @@ abundance <- function(n,p,l){
 }
 
 # 13
+abundance <- function(sites,species){
+  M <- matrix(NA, nrow=species, ncol=sites)
+  for(i in 1:species){
+    prob <- runif(1,0,1)
+    lambda <- runif(1,1,100)
+    a <- rbinom(sites, 1, prob)
+    b <- rpois(sites,lambda)
+    s <- a*b
+    M[i,] <- c(s)
+  }
+  return(t(M))
+}
