@@ -108,7 +108,7 @@ textbocks <- function(height,width,text){
 test.text <- "I have come here to chew bubblegum and kick ass... and I'm all out of bubblegum"
 textbocks(10,83,test.text)
 
-# 11  - I made this randomly sample input text because I thought that would be more interesting, and also because it was a more immediately obvious solution. Will probably fix later. 
+# 11  - I made this randomly sample input text because I thought that would be more interesting, and also because it was a more immediately obvious solution. Will probably fix later.
 
 randtextbocks <- function(input,height,width,text){
   samp <- strsplit(input,'')[[1]]
@@ -129,4 +129,11 @@ randtextbocks <- function(input,height,width,text){
   cat('\n')
 }
 
-## 12
+# 12 - n = num of sites, p = prob. of species being at site, l = average abundance if present
+abundance <- function(n,p,l){
+  a <- rbinom(n, 1, p)
+  b <- rpois(n,l)
+  return(a*b)
+}
+
+# 13
