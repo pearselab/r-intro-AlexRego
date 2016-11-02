@@ -151,33 +151,16 @@ abundance <- function(sites,species){
 }
 
 # 14
-# lost <- function(n){
-#   count <- 0
-#   time <- 0
-#   x <- 0
-#   y <- 0
-#   plot(x,y, xlim=c(-10,10), ylim=c(-10,10))
-#   while(count <= n){
-#     c0 <- as.matrix(c(x,y))
-#     x <- x + rnorm(1,0,1)
-#     y <- y + rnorm(1,0,1)
-#     c1 <- as.matrix(c(x,y))
-#     lines(coord0,coord1)
-#     time <- time + 5
-#     count <- count + 1
-#   }
-# }
-
 lost <- function(n){
   count <- 0
   time <- 0
-  x <- 0
-  y <- 0
+  x <- c(0)
+  y <- c(0)
   plot(x,y, xlim=c(-100,100), ylim=c(-100,100))
   while(count <= n){
-    x <- x + rnorm(1,0,1)
-    y <- y + rnorm(1,0,1)
-    points(x,y)
+    lines(x,y, lty=5,lwd=.1)
+    x[length(x)+1] <- (x[length(x)] + rnorm(1,0,1))
+    y[length(y)+1] <- (y[length(y)] + rnorm(1,0,1))
     time <- time + 5
     count <- count + 1
   }
