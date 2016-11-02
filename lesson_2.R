@@ -156,12 +156,28 @@ lost <- function(n){
   time <- 0
   x <- c(0)
   y <- c(0)
-  plot(x,y, xlim=c(-100,100), ylim=c(-100,100))
+  plot(x,y, xlim=c(-1000,1000), ylim=c(-1000,1000))
   while(count <= n){
     lines(x,y, lty=5,lwd=.1)
     x[length(x)+1] <- (x[length(x)] + rnorm(1,0,1))
     y[length(y)+1] <- (y[length(y)] + rnorm(1,0,1))
     time <- time + 5
     count <- count + 1
+  }
+}
+
+# 15
+lost <- function(){
+  time <- 0
+  x <- 0
+  y <- 0
+  while(time >= 0){
+    x <- x + rnorm(1,0,1)
+    y <- y + rnorm(1,0,1)
+    d <- sqrt((x[length(x)]**2 + y[length(y)]**2))
+    time <- time + 5
+    if(d > 500){
+      return(c('Hours until doom:', (time/3600)))
+    }
   }
 }
