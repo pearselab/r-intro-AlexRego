@@ -126,5 +126,28 @@ way- in short, the period was so far like the present period, that
 some of its noiosiest authorities insisted on its being received, for
 good or for evil, in the superlative degree of comparison only."
 
+split <- strsplit(bonus.text, split= '\n')
+grepl('\n', bonus.text)
+## Find all instances of 'the'
+gregexpr('\\s[t][h][e]\\s',bonus.text)
+## What lines end with vowels?
+for(i in 1:length(split[[1]])){
+  if(grepl('[aeiuo]$',split[[1]][i])==TRUE){
+    print(i)
+  }
+}
+## What lines begin with 'was'
+for(i in 1:length(split[[1]])){
+  if(grepl('^[Ww][a][s]',split[[1]][i])==TRUE){
+    print(i)
+  }
+}
+
+## where 'it' is written twice in a row
+gregexpr('(\\s[i][t]\\s){2}',bonus.text)
+
+## where three vowels are written inside a single word
+gregexpr('(\\w[aeiou]{3}\\w){2}',bonus.text)
+
 strsplit(bonus.text, split= '\n')
 grepl('\n', bonus.text)

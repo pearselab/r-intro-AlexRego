@@ -156,16 +156,16 @@ lost <- function(n){
   time <- 0
   x <- c(0)
   y <- c(0)
-  plot(x,y, xlim=c(-500,500), ylim=c(-500,500))
+  dist <- sqrt((x[length(x)]**2 + y[length(y)]**2))
   while(count <= n){
-    lines(x,y, lty=5,lwd=.1)
+    plot(x,y, xlim=c(-500,500), ylim=c(-500,500),type='l', lty=5, main=c('Distance from center', dist))
     x[length(x)+1] <- (x[length(x)] + rnorm(1,0,1))
     y[length(y)+1] <- (y[length(y)] + rnorm(1,0,1))
+    dist <- sqrt((x[length(x)]**2 + y[length(y)]**2))
     time <- time + 5
     count <- count + 1
   }
 }
-
 # 15
 plummet <- function(){
   time <- 0
@@ -178,6 +178,83 @@ plummet <- function(){
     time <- time + 5
     if(d > 500){
       return(c('Hours until doom:', (time/3600)))
+    }
+  }
+}
+
+# 16
+plummet <- function(alpha){
+  time <- 0
+  x <- 0
+  y <- 0
+  dist <-.01
+  while(time >= 0){
+    x[length(x)+1] <- (x[length(x)] + rnorm(1,0,1)*(1/(alpha*dist)))
+    y[length(y)+1] <- (y[length(y)] + rnorm(1,0,1)*(1/(alpha*dist)))
+    dist <- sqrt((x[length(x)]**2 + y[length(y)]**2))
+    time <- time + 5
+    if(dist >= 500){
+      return(c('Hours until doom:', (time/3600)))
+    }
+  }
+}
+
+lost <- function(n,alpha){
+  count <- 0
+  time <- 0
+  x <- c(0)
+  y <- c(0)
+  dist <- 1
+  while(count <= n){
+    plot(x,y, xlim=c(-500,500), ylim=c(-500,500),type='l', lty=5, main=sqrt((x[length(x)]**2 + y[length(y)]**2)))
+    x[length(x)+1] <- (x[length(x)] + rnorm(1,0,1)*(1/(alpha*dist)))
+    y[length(y)+1] <- (y[length(y)] + rnorm(1,0,1)*(1/(alpha*dist)))
+    time <- time + 5
+    count <- count + 1
+    dist <- sqrt((x[length(x)]**2 + y[length(y)]**2))
+  }
+}
+# 17
+## If faculty speeds up through time
+lost <- function(n){
+  count <- 0
+  time <- 0
+  x <- c(0)
+  y <- c(0)
+  dist <- sqrt((x[length(x)]**2 + y[length(y)]**2))
+  while(time >= 0){
+    plot(x,y, xlim=c(-500,500), ylim=c(-500,500),type='l', lty=5, main=c('Distance from center', dist))
+    x[length(x)+1] <- (x[length(x)] + rnorm(1,0,(1+.001*time)))
+    y[length(y)+1] <- (y[length(y)] + rnorm(1,0,1+.001*time))
+    dist <- sqrt((x[length(x)]**2 + y[length(y)]**2))
+    time <- time + 5
+    count <- count + 1
+    if(dist > 500 | count == n){
+      return(time)
+    }
+  }
+}
+
+## If faculty slows over time
+lost <- function(n){
+  count <- 0
+  time <- 0
+  x <- c(0)
+  y <- c(0)
+  dist <- sqrt((x[length(x)]**2 + y[length(y)]**2))
+  while(time >= 0){
+    plot(x,y, xlim=c(-500,500), ylim=c(-500,500),type='l', lty=5, main=c('Distance from center', dist))
+    x[length(x)+1] <- (x[length(x)] + rnorm(1,0,(1-.00001*time)))
+    y[length(y)+1] <- (y[length(y)] + rnorm(1,0,(1-.00001*time)))
+    dist <- sqrt((x[length(x)]**2 + y[length(y)]**2))
+    time <- time + 5
+    count <- count + 1
+    if(dist > 500){
+      return(time)
+    } else{
+    if(1-.00001*time == .00005 | count == n){
+      return(dist)
+      }
     }
   }
 }
