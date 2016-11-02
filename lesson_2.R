@@ -156,7 +156,7 @@ lost <- function(n){
   time <- 0
   x <- c(0)
   y <- c(0)
-  plot(x,y, xlim=c(-1000,1000), ylim=c(-1000,1000))
+  plot(x,y, xlim=c(-500,500), ylim=c(-500,500))
   while(count <= n){
     lines(x,y, lty=5,lwd=.1)
     x[length(x)+1] <- (x[length(x)] + rnorm(1,0,1))
@@ -167,7 +167,7 @@ lost <- function(n){
 }
 
 # 15
-lost <- function(){
+plummet <- function(){
   time <- 0
   x <- 0
   y <- 0
