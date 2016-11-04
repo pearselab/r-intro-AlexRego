@@ -1,4 +1,3 @@
-## what even
 # 1
 new.cat <- function(cool, fat,...){
   output <- list(cool=cool, fat=fat)
@@ -91,7 +90,3 @@ grapher.poly <- function(input,...){
         x1= input[3]$point3[1]$x, y1= input[3]$point3[2]$y)
   }
 }
-
-# 8
-## plot circumference
-#a;lsdkf;
