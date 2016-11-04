@@ -25,7 +25,7 @@ pseudosum <- function(x){
   }
 }
 
-# 5 
+# 5
 dna <- 'ACGATATACGAG'
 translate <- function(x){
   ## split sequence into codons
@@ -43,3 +43,57 @@ translate <- function(x){
     cat((codonmatrix[,i]))
   }
 }
+
+# Bonus Exercises - Recursion
+# 1
+fibrec <- function(n){
+  if(n<0){
+    return('Error: n<0')
+  } else{
+    if(n==0 | n==1){
+      return(n)
+    } else{
+      return(fibrec(n-2)+fibrec(n-1))
+    }
+  }
+}
+
+# 2 - WIP
+# bigly <- function(x){
+#   if(length(x)==1){
+#     return(x[1])
+#   } else{
+#     m = max(x[1:length(x)])
+#     if(m>x[1]){
+#       return(m)
+#     } else{
+#       x[0]
+#     }
+#   }
+# }
+
+# 3
+# summation <- function(x){
+#   if(length(x)==1){
+#       return(x[1])
+#     } else{
+#       for(number in x){
+#         return(summation(x)+summation(x+1))
+#     }
+#   }
+# }
+
+# 4
+# is.primerec <- function(x,d){
+#   if(x<2){
+#     return(FALSE)
+#   } else{
+#     if(x == 2){
+#     return(TRUE)
+#       } else{
+#         if((sqrt(x)+1)%%d+1 != 0){
+#         return(is.primerec(x,d))
+#       } else{
+#         return('Is not prime')
+#       }
+# }}}
