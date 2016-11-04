@@ -69,13 +69,19 @@ new.polygon <- function(first,second,third,...){
   return(output)
 }
 polygon <- new.polygon(first,second,third)
+
 #6
-grapher <- function(input,...){
+grapher.line <- function(input,...){
   plot(NA, xlim=c(-20,20), ylim=c(-20, 20), xlab="x", ylab="y")
   if(inherits(input, 'line')){
       segments(x0 = input[1]$point1[1]$x, y0 = input[1]$point1[2]$y,
         x1= input[2]$point2[1]$x, y1= input[2]$point2[2]$y)
   }
+}
+
+# 7
+grapher.poly <- function(input,...){
+  plot(NA, xlim=c(-20,20), ylim=c(-20, 20), xlab="x", ylab="y")
   if(inherits(input, 'polygon')){
       segments(x0 = input[1]$point1[1]$x, y0 = input[1]$point1[2]$y,
         x1= input[2]$point2[1]$x, y1= input[2]$point2[2]$y)
@@ -83,5 +89,8 @@ grapher <- function(input,...){
         x1= input[3]$point3[1]$x, y1= input[3]$point3[2]$y)
       segments(x0 = input[1]$point1[1]$x, y0 = input[1]$point1[2]$y,
         x1= input[3]$point3[1]$x, y1= input[3]$point3[2]$y)
-    }
+  }
 }
+
+# 8
+## plot circumference
